@@ -1,5 +1,3 @@
-# spring-boot-app #
-=======
 # Employee-management-System #
 Employee management system using spring boot and mySql
 
