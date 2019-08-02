@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/paddddding.css">
+    
+
+
+<link rel="stylesheet" href="bootstrap3.4.1/css/bootstrap.min.css" >
+
+    <style type="text/css">
+
+      #ref_form{
+        background-color: transparent;
+        background-size: cover;
+
+        }     
+
+      #ui{
+        background-color: rgba(255,255,255,0.9);
+        padding: 60px;
+        margin-top: 120px;
+        
+        margin-bottom: 80px;
+        border-radius: 10px;
+        width: 700px;
+        box-shadow: 10px 10px 8px 10px #888888;
+        box-align: center;
+
+      
+      }
+      #ui label{
+        color: #008B8B;
+      
+      }
+
+      #ui h1{
+        color: #008080;
+        font-family:  Tahoma, Geneva, sans-serif;
+        font-weight: bold;
+      }
+
+
+    
+  
+
+    </style>
+
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    <div class="top-bar py-3 bg-light" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 text-left">
+            <ul class="social-media">
+              <li><a href="https://www.facebook.com/" class="p-2"><span class="icon-facebook"></span></a></li>
+              <li><a href="https://twitter.com/?lang=en" class="p-2"><span class="icon-twitter"></span></a></li>
+              <li><a href="https://www.instagram.com/?hl=en" class="p-2"><span class="icon-instagram"></span></a></li>
+              <li><a href="https://in.linkedin.com/" class="p-2"><span class="icon-linkedin"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <p class="mb-0 float-right">
+              <span class="mr-3"><a href="tel://#"> <span class="icon-phone mr-2"></span><span class="d-none d-lg-inline-block">+1 234 5678 9101</span></a></span>
+              <span><a href="#"><span class="icon-envelope mr-2"></span><span class="d-none d-lg-inline-block">biztalks@gmail.com</span></a></span>
+            </p>
+            
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">BIZ Talks</a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#about_uss" class="nav-link">About Us</a></li>
+              <!--   <li><a href="#team-section" class="nav-link">Team</a></li> -->
+                <li><a href="C:\Users\rawat\Downloads\consula\consula\employees.html" class="nav-link">Employees</a></li>
+               <!--  <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
+                <li><a href="C:\Users\rawat\Downloads\consula\consula\regform.html" class="nav-link">Add Employee</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+
+
+
+     <div class="container" id="ref_form">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div id="ui">
+          <h1 class="text-center">EMPLOYEE INFORMATION FORM</h1>
+          <br><br>
+          <form class="form-group" method="POST" action="" onsubmit="return valid()" >
+             <div class="row">
+                <div class="col-lg-4">
+                <label>First Name : </label>
+                  <div class="input-group">
+                    <input type="text" name="fname" id="fname_id" class="form-control" placeholder="enter first name" onkeyup="valid_fname()">  
+                    <span class="input-group-addon" id="fname_i"></span>  
+                  </div>
+                  <label><div id="fname_v"></div></label>
+
+                </div>            
+                
+                <div class="col-lg-4">
+                <label>Last Name : </label>
+                  <div class="input-group">
+                    <input type="text" name="lname" id="lname_id" class="form-control" placeholder="enter last name" onkeyup="valid_lname()">  
+                    <span class="input-group-addon" id="lname_i"></span> 
+                    </div> 
+                    <label><div id="lname_v"></div></label>
+                </div>  
+                <div class="col-lg-4">
+                <label>Date of Birth : </label>
+                  <div class="input-group">
+                    <input type="date" name="dob" id="dob_id" class="form-control" onchange="valid_dob()" > 
+                    <span class="input-group-addon" id="dob_i"></span>  
+                  </div>
+                  <label><div id="dob_v"></div></label>
+
+                </div>            
+            </div>
+
+
+
+
+            <br>
+
+
+
+
+             <div class="row">
+              <div class="col-lg-3">
+                  <label>Gender</label>
+              </div>
+              <div class="col-lg-2">
+                <input type="radio" name="gender" id="male_id" value="Male" >
+                <label>Male</label>
+              </div>
+              <div class="col-lg-2">
+                <input type="radio" name="gender" id="female_id" value="Female">
+                <label>Female</label>
+              </div>
+              <div class="col-lg-4" id="gen_v">
+                
+              </div>
+             <br>
+            <br>
+
+            <br>
+             </div>
+             <div class="row">
+                <div class="col-lg-4">
+                <label>Employee ID : </label>
+                <div class="input-group">
+                <input type="text" name="eid" id="eid_id" class="form-control" placeholder="enter employee id" onkeyup="valid_eid()"> 
+                <span class="input-group-addon" id="eid_i"></span> 
+                </div>
+                <label><div id="eid_v"></div></label>
+                </div>            
+             
+                <div class="col-lg-4">
+                <label>Unit : </label>
+                <div class="input-group">
+                <input type="text" name="unit" id="unit_id" class="form-control" placeholder="enter unit" onkeyup="valid_unit()">
+                <span class="input-group-addon" id="unit_i"></span>    
+                </div>
+                <label><div id="unit_v"></div></label>
+                </div>  
+                <div class="col-lg-4">
+                <label>Branch : </label>
+                <div class="input-group">
+              <!--  <input type="text" name="branch" id="branch_id" class="form-control" placeholder="enter branch"> -->
+                <select name="branch" id="branch_id" class="form-control" onchange="valid_branch()">
+                  <option selected="" value="default">(select branch)</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Kolkata">Kolkata</option>
+                  <option value="Durgapur">Durgapur</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Gurgaon">Gurgaon</option>
+                </select>  
+                <span class="input-group-addon" id="branch_i"></span>    
+                </div>
+                <label><div id="branch_v"></div></label>
+                </div>            
+             </div>
+          
+             <br>
+             <div class="row">
+                <div class="col-lg-6">
+                <label>Email</label>
+                <div class="input-group">
+                <input type="text" name="email" id="email_id" class="form-control" placeholder="enter your email" onkeyup="valid_email()" >
+                <span class="input-group-addon" id="email_i"></span>    
+                </div>
+                <label><div id="email_v"></div></label>
+                </div>
+                <div class="col-lg-6">
+                <label>Designation</label>
+                <div class="input-group">
+                <input type="text" name="desg" id="desg_id" class="form-control" placeholder="enter your designation" onkeyup="valid_des()" >
+                <span class="input-group-addon" id="desg_i"></span>     
+                </div>
+                <label><div id="desg_v"></div></label>
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-lg-6">
+                <label>Contact no. : </label>
+                <div class="input-group">
+                <input type="text" name="contact" id="contact_id" class="form-control" placeholder="enter mobile no." onkeyup="valid_contact()" > 
+                <span class="input-group-addon" id="contact_i"></span>   
+                </div>
+                <label><div id="contact_v"></div></label>
+                </div>            
+             
+                <div class="col-lg-6">
+                <label>Profile Photo (upload in jpg or png) : </label>
+                <div class="input-group">
+                <input type="file" name="pic" id="pic_id" class="form-control" onchange="valid_pic()" >
+                <span class="input-group-addon" id="pic_i"></span>    
+                </div>
+                <label><div id="pic_v"></div></label>
+                </div>            
+             </div>
+
+
+
+            <br>
+        <!--     <div class="row">
+                <div class="col-lg-6">
+                <label>Password : </label>
+                <div class="input-group">
+                <input type="password" name="pass" id="pass_id" class="form-control" placeholder="enter password">
+                <span class="input-group-addon" id="pass_i"></span>     
+                </div>
+                <label><div id="pass_v"></div></label>
+                </div>            
+             
+                <div class="col-lg-6">
+                <label>Confirm Password : </label>
+                <div class="input-group">
+                <input type="password" name="cpass" id="cpass_id" class="form-control" placeholder="re-enter password">
+                <span class="input-group-addon" id="cpass_i"></span>    
+                </div>   
+                <label><div id="cpass_v"></div></label>
+                </div>            
+             </div> -->
+              <div class="row">
+              <div class="col-lg-12">
+              <label>Address</label>
+                <textarea class="form-control" rows="2" id="add" onkeyup="valid_add()"></textarea>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-lg-12">
+                <label><div id="add_v"></div></label>               
+              </div>
+              </div>
+             <br>
+
+             <div class="row">
+                <div class="col-lg-6">
+                <label>City : </label>
+                  <div class="input-group">
+                    <input type="text" name="city" id="city_id" class="form-control" placeholder="enter city" onkeyup="valid_city()"> 
+                    <span class="input-group-addon" id="city_i"></span>  
+                  </div>
+                  <label><div id="city_v"></div></label>
+
+                </div>            
+                
+                <div class="col-lg-6">
+                <label>Pin : </label>
+                  <div class="input-group">
+                    <input type="text" name="lname" id="pin_id" class="form-control" placeholder="enter pin" onkeyup="valid_pin()">  
+                    <span class="input-group-addon" id="pin_i"></span> 
+                    </div> 
+                    <label><div id="pin_v"></div></label>
+                </div>          
+            </div>
+            <br>
+             <div class="row">
+              <div class="col-lg-12">
+                <input type="submit" name="submit" value="submit"  class="btn btn-primary btn-block btn-lg" class="form-control">
+              </div>
+            </div>
+
+          </form>
+        </div> 
+      </div>
+      <div class="col-lg-3"></div>
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
+    <section class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            
+            <h2 class="section-title mb-3">Reach Out Us</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 mb-5">
+
+            
+
+            <form action="#" class="p-5 bg-white">
+              
+              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label> 
+                  <input type="subject" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+          <div class="col-md-5">
+            
+            <div class="p-4 mb-3 bg-white">
+              <p class="mb-0 font-weight-bold">Address</p>
+              <p class="mb-4">Ambedkar Colony, Yelahanka, Bangalore - 560064, Karnataka, India</p>
+
+              <p class="mb-0 font-weight-bold">Phone</p>
+              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+
+              <p class="mb-0 font-weight-bold">Email Address</p>
+              <p class="mb-0"><a href="#">biztalks@gmail.com</a></p>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="#" class="bg-primary py-5 d-block">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md10"><h2 class="text-white">Let's Get Started</h2></div>
+        </div>
+      </div>  
+    </a>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-5" id="about_uss">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>BIZ Talks is one of the leading Web Design Consultancy Company in India. It provides Web Designing Consultancy Services since its formation in 2004.</p>
+              </div>
+              <div class="col-md-3 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                 <!--  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li> -->
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+            <form action="#" method="post" class="footer-subscribe">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary text-black" type="button" id="button-addon2">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+
+
+ 
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  
+  <script src="js/main.js"></script>
+
+   <script src="bootstrap3.4.1/js/jquery-3.4.1.js" ></script>
+  <script src="bootstrap3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/validation.js" ></script>
+    
+  </body>
+</html>

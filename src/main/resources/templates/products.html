@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(Employee)}">
+        <h2>Product List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Employee Id</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Unit</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Designation</th>
+                <th>Contact Number</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>PinCode</th>
+            </tr>
+            <tr th:each="product : ${Employee}">
+              <!--   <td th:text="${product.id}"><a href="/product/${product.id}">Id</a></td>
+                <td th:text="${product.productId}">Product Id</td> -->
+                <td th:text="${product.employee_id}">descirption</td>
+                <td th:text="${product.first_name}">descirption</td>
+                <td th:text="${product.last_name}">descirption</td>
+                <td th:text="${product.dob}">descirption</td>
+                <td th:text="${product.sex}">descirption</td>
+                <td th:text="${product.unit}">descirption</td>
+                <td th:text="${product.department}">descirption</td>
+                <td th:text="${product.email}">descirption</td>
+                <td th:text="${product.designation}">descirption</td>
+                <td th:text="${product.contact_number}">descirption</td>
+                <td th:text="${product.address}">descirption</td>
+                <td th:text="${product.city}">descirption</td>
+                <td th:text="${product.pin}">descirption</td>
+                <td><a th:href="${ '/detail/' + product.employee_id}">View</a></td>
+                <td><a th:href="${'/detail/edit/' + product.employee_id}">Edit</a></td>
+                <td><a th:href="${'/detail/delete/' + product.employee_id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
