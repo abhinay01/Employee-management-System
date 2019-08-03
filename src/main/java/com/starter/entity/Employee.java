@@ -1,16 +1,22 @@
 package com.starter.entity;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+/* Entity Class to declare all the fields of the database.
+ * Created getter and setter functions for all the fields
+ * */
+ 
+ 
 @Table(name="emp")
 @Entity
 public class Employee {
 
     @Id
-    //@GeneratedValue()
     @Column(name="employee_id")
     private Integer employee_id;
 

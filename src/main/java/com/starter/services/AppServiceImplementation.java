@@ -1,3 +1,7 @@
+
+
+
+
 package com.starter.services;
 
 import java.nio.file.Files;
@@ -43,11 +47,6 @@ public class AppServiceImplementation implements AppServices {
 	}
 	
 	@Override
-	public Employee getEmployeeByEmail(String email) {
-		return apprepository.findByEmail(email);
-	}
-
-	@Override
 	public Employee updateEmployee(Integer employee_id, String newEmail) {
 		Employee employeeFromDb = apprepository.findOne(employee_id);
 		employeeFromDb.setEmail(newEmail);
@@ -55,7 +54,7 @@ public class AppServiceImplementation implements AppServices {
 		return appendEmployee;
 	}
 	
-	@Override
+		@Override
 	public void saveImage(MultipartFile imagefile, Employee employee) throws Exception {
 		//File rootDir = new File("D:\\desktop\\training\\project\\final1.0\\spring-boot-app");
 		
@@ -82,4 +81,5 @@ public class AppServiceImplementation implements AppServices {
 	
 
 }
+
 

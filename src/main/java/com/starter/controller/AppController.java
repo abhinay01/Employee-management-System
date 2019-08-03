@@ -22,11 +22,8 @@ public class AppController {
 		this.appservice = appservice;
 	}
 	
-	//@RequestMapping("/error")
-	//public String errorPrint()
-	//{
-	//	return "error";
-	//}
+	/* URL mapping done for adding a new Employee
+	 * This mapping redirects it to Registration Form. */
 	
 	@RequestMapping("/addemployee")
 	public String addDetails(Model model) {
@@ -34,19 +31,20 @@ public class AppController {
 		return "regform";
 	}
 	
+	/* This is the post Mapping done when the form on Registration page gets submitted. */
 	
 	@RequestMapping(value="detail",method=RequestMethod.POST)
 	public String saveDetails( Employee employee, @RequestParam("imagefile") MultipartFile imagefile) {
 		
 		System.out.println(employee.getProfile_pic());
 		
-		if(appservice.findPKey(employee.getEmployee_id()))
-				return "error";
+		if(appservice.findPKey(employee.getEmployee_id()))           /*Validation for employee_id so it will not have duplicate values.*/
+		 	return "error";														   
 		else
 		{
 			try {
 				System.out.println("Inside try");
-				appservice.saveImage(imagefile, employee);
+				appservice.saveImage(imagefile, employee);          /*Calling a separate function to save the image in an external folder present in src->main->resources->static->images and also in the database.*/
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -58,44 +56,20 @@ public class AppController {
 	}
 	}
 	
+	/* URL Mapping done to display the list of all the Employees.
+	 * It will redirect to HTML page where the detais have been shown fetched from database. */
 	
-//	@RequestMapping("detail/new")
-//	public String addDetails(Model model) {
-//		model.addAttribute("Employee", new Employee());
-//		return "regform";
-//	}
-//	
 	@RequestMapping(value="/employee",method=RequestMethod.GET)
 	public String list(Model model) {
 		model.addAttribute("Employee", appservice.listDetails());
 		System.out.println("53");
 		return "employees";
 	}
+	  
 	
-	
-//	@RequestMapping(value="/detail/search_id",method=RequestMethod.GET)
-//	public String list(Model model) {
-//		model.addAttribute("Employee", appservice.listDetails());
-//		System.out.println("59");
-//		return "employees";
-//	}
-	
-	
-	
-
-//	@RequestMapping(value="detail",method=RequestMethod.POST)
-//	public String saveDetails(Employee employee) {
-//		appservice.saveDetails(employee);
-//		System.out.println("54");
-//		return "products";
-//	}
-	
-//	@RequestMapping(value="detail",method=RequestMethod.POST)
-//	public String saveDetails(Employee employee) {
-//		appservice.saveDetails(employee);
-//		System.out.println("54");
-//		return "index";
-//	}
+	/* URL Mapping done for searching by employee_id
+	 * If not found then return error page
+	 * else it will show the profile of the user found. */
 	
 	@RequestMapping("/detail/search_id")
 	public String employee_byID(Model model,@RequestParam("emp_id") Integer emp_id ) {
@@ -106,6 +80,7 @@ public class AppController {
 			return "error";
 	}
 	
+	/* URL Mapping done to view the employee. */
 	
 	@RequestMapping("/detail/{employee_id}")
 	public String employee_Details(@PathVariable Integer employee_id,Model model) {
@@ -114,11 +89,17 @@ public class AppController {
 		return "profile";
 	}
 	
+	
+	/* URL mapping done to edit an employee_id.  */
+	
 	@RequestMapping("detail/edit/{employee_id}")
 	public String editDetails(@PathVariable Integer employee_id,Model model) {
 		model.addAttribute("Employee", appservice.getDetailById(employee_id));
+		
 		return "Update_prof";
 	}
+	
+	/* URL Mapping done to delete an employee. */
 	
 	@RequestMapping("detail/delete/{employee_id}")
 	public String deleteDetails(@PathVariable Integer employee_id) {
@@ -126,37 +107,13 @@ public class AppController {
 		return "redirect:/employee";
 	}
 	
-	/*
-	 * @GetMapping("/employee") public String employeeSearch(Model model) {
-	 * model.addAttribute("Employee",new Employee());
-	 * 
-	 * return "employees"; }
-	 * 
-	 * @PostMapping("/employee") public String employeeSearch(Employee
-	 * employee,Model model,String designation) { Employee foundEmployee =
-	 * appservice.getDetailByDesignation(designation);
-	 * model.addAttribute("Employee",foundEmployee);
-	 * 
-	 * return "employees";
-	 * 
-	 * }
-	 */
-	
+	/* URL Mapping done to update the detail of the employee. */
 	
 	@RequestMapping(value="updateddetail",method=RequestMethod.POST)
-	public String saveUpdatedDetails( Employee employee, @RequestParam("imagefile") MultipartFile imagefile) {
-	
-		try {
-			System.out.println("Inside try");
-			appservice.saveImage(imagefile, employee);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	public String saveUpdatedDetails( Employee employee) {
+	    
 		System.out.println(employee.getProfile_pic());
 		appservice.saveDetails(employee);
-		System.out.println("54");
 		return "redirect:/employee";
 	}
 
