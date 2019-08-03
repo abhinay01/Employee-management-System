@@ -1,5 +1,7 @@
 package com.starter.services;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.starter.entity.Employee;
@@ -16,8 +18,16 @@ public interface AppServices {
 
 	void saveImage(MultipartFile imagefile, Employee employee) throws Exception;
 
+	Employee getEmployeeByEmail(String email);
+
 	Employee updateEmployee(Integer employee_id, String newEmail);
 
 	boolean findPKey(Integer employee_id);
 	
+	
+
+	
+
+	
+
 }
