@@ -42,20 +42,8 @@ public class AppServiceImplementation implements AppServices {
 	public void deleteRecord(Integer employee_id) {
 		apprepository.delete(employee_id);
 	}
-	
-	@Override
-	public Employee getEmployeeByEmail(String email) {
-		return apprepository.findByEmail(email);
-	}
 
-	@Override
-	public Employee updateEmployee(Integer employee_id, String newEmail) {
-		Employee employeeFromDb = apprepository.findOne(employee_id);
-		employeeFromDb.setEmail(newEmail);
-		Employee appendEmployee = apprepository.save(employeeFromDb);
-		return appendEmployee;
-	}
-	
+		
 	@Override
 	public void saveImage(MultipartFile imagefile, Employee employee) throws Exception {
 		//File rootDir = new File("D:\\desktop\\training\\project\\final1.0\\spring-boot-app");
