@@ -23,9 +23,16 @@ $(document).ready(function () {
             });
             $('#profilePicture').on('change', function () {
                 readURL(this);
+            //    $('#btnChangePicture').addClass('changing');
+             //   $('#btnChangePicture').attr('value', 'Confirm');
+             //   $('#btnDiscard').removeClass('d-none');
+            
                 $('#btnChangePicture').addClass('changing');
                 $('#btnChangePicture').attr('value', 'Confirm');
+                $('#btnChangePicture').attr('type', 'submit');
+              //  $('#btnChangePicture').attr('name', 'imagefile');
                 $('#btnDiscard').removeClass('d-none');
+                
                 // $('#imgProfile').attr('src', '');
             });
             $('#btnDiscard').on('click', function () {
