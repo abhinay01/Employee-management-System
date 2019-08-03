@@ -61,13 +61,13 @@ public class AppControllerRest {
 	}
 	
 	
-	@ApiOperation(value = "Get an employee by email")
-	@CrossOrigin
-	@GetMapping(value="/email/{email:.+}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Employee getEmployeeByEmail(@PathVariable("email")String email){
-		return appServiceImplementation.getEmployeeByEmail(email);
-	}
-	
+//	@ApiOperation(value = "Get an employee by email")
+//	@CrossOrigin
+//	@GetMapping(value="/email/{email:.+}",produces=MediaType.APPLICATION_JSON_VALUE)
+//	public Employee getEmployeeByEmail(@PathVariable("email")String email){
+//		return appServiceImplementation.getEmployeeByEmail(email);
+//	}
+//	
 	
 	@ApiOperation(value = "Delete an employee")
 	@CrossOrigin
