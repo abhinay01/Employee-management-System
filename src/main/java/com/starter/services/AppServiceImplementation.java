@@ -1,12 +1,9 @@
-
-
-
-
 package com.starter.services;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,6 +44,11 @@ public class AppServiceImplementation implements AppServices {
 	}
 	
 	@Override
+	public Employee getEmployeeByEmail(String email) {
+		return apprepository.findByEmail(email);
+	}
+
+	@Override
 	public Employee updateEmployee(Integer employee_id, String newEmail) {
 		Employee employeeFromDb = apprepository.findOne(employee_id);
 		employeeFromDb.setEmail(newEmail);
@@ -54,15 +56,12 @@ public class AppServiceImplementation implements AppServices {
 		return appendEmployee;
 	}
 	
-		@Override
+	@Override
 	public void saveImage(MultipartFile imagefile, Employee employee) throws Exception {
 		//File rootDir = new File("D:\\desktop\\training\\project\\final1.0\\spring-boot-app");
 		
 		//String folder="C:\\spring-boot-final-new\\spring-boot-final-new\\src\\main\\resources\\static\\images";
-		System.out.println("USER "+System.getProperty("user.dir"));
-		String sysPath=System.getProperty("user.dir");
-		//String folder="D:\\desktop\\training\\project\\Employee-Management-System\\src\\main\\resources\\static\\images\\";
-		String folder=sysPath+"\\\\src\\\\main\\\\resources\\\\static\\\\images\\\\";
+		String folder="D:\\spring-boot-final-new1111\\spring-boot-final-new\\spring-boot-final-new\\src\\main\\resources\\static\\images\\";
 		byte[] bytes=imagefile.getBytes();
 		Path path = Paths.get(folder+imagefile.getOriginalFilename());
 		System.out.println(path);
@@ -81,5 +80,4 @@ public class AppServiceImplementation implements AppServices {
 	
 
 }
-
 
