@@ -60,14 +60,8 @@ public class AppControllerRest {
 		return appServiceImplementation.getDetailById(employeeId);
 	}
 	
+
 	
-//	@ApiOperation(value = "Get an employee by email")
-//	@CrossOrigin
-//	@GetMapping(value="/email/{email:.+}",produces=MediaType.APPLICATION_JSON_VALUE)
-//	public Employee getEmployeeByEmail(@PathVariable("email")String email){
-//		return appServiceImplementation.getEmployeeByEmail(email);
-//	}
-//	
 	
 	@ApiOperation(value = "Delete an employee")
 	@CrossOrigin
@@ -76,10 +70,5 @@ public class AppControllerRest {
 		appServiceImplementation.deleteRecord(employeeId);
 	}
 	
-	@ApiOperation(value = "Update an employee")
-	@CrossOrigin
-	@PutMapping(value="/employeeId/{employeeId}/email/{newEmail:.+}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Employee updateEmployee(@PathVariable("employee_id")Integer employee_id,@PathVariable("newEmail")String newEmail){
-		return appServiceImplementation.updateEmployee(employee_id,newEmail);
-	}
+
 }

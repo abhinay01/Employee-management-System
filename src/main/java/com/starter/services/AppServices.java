@@ -17,12 +17,8 @@ public interface AppServices {
 	void deleteRecord(Integer id);
 
 	void saveImage(MultipartFile imagefile, Employee employee) throws Exception;
-
-	Employee getEmployeeByEmail(String email);
-
-	Employee updateEmployee(Integer employee_id, String newEmail);
-
-	boolean findPKey(Integer employee_id);
+	
+    boolean findPKey(Integer employee_id);
 	
 	
 
